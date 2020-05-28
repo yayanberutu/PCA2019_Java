@@ -42,31 +42,31 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n");
-      out.write("  <a class=\"navbar-brand\" href=\"Home.jsp\">PCA20</a>\n");
-      out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
-      out.write("    <span class=\"navbar-toggler-icon\"></span>\n");
-      out.write("  </button>\n");
-      out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n");
-      out.write("    <div class=\"navbar-nav\">\n");
-      out.write("      <a class=\"nav-item nav-link active\" href=\"Home.jsp\">Home <span class=\"sr-only\">(current)</span></a>\n");
-      out.write("      <a class=\"nav-item nav-link\" href=\"Aspa.jsp\">Kamar Aspa</a>\n");
-      out.write("      <a class=\"nav-item nav-link\" href=\"Aspi.jsp\">Kamar Aspi</a>\n");
-      out.write("    </div>\n");
-      out.write("  </div>\n");
-      out.write("</nav>\n");
-      out.write("            \n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n");
+      out.write("  <a class=\"navbar-brand\" href=\"Home.jsp\">PCA20</a>\r\n");
+      out.write("  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n");
+      out.write("    <span class=\"navbar-toggler-icon\"></span>\r\n");
+      out.write("  </button>\r\n");
+      out.write("  <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\r\n");
+      out.write("    <div class=\"navbar-nav\">\r\n");
+      out.write("      <a class=\"nav-item nav-link active\" href=\"Home.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
+      out.write("      <a class=\"nav-item nav-link\" href=\"Aspa.jsp\">Kamar Aspa</a>\r\n");
+      out.write("      <a class=\"nav-item nav-link\" href=\"Aspi.jsp\">Kamar Aspi</a>\r\n");
+      out.write("    </div>\r\n");
+      out.write("  </div>\r\n");
+      out.write("</nav>\r\n");
+      out.write("            \r\n");
       out.write("    ");
 
     try
@@ -79,68 +79,68 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         ResultSet rs=st.executeQuery("SELECT * FROM mahasiswa ORDER BY status_kedatangan DESC");
 
     
-      out.write("\n");
-      out.write("    <table class=\"table table-striped\">\n");
-      out.write("\n");
-      out.write("  <thead>\n");
-      out.write("    <tr>\n");
-      out.write("      <th scope=\"col\">No Pendaftaran</th>\n");
-      out.write("      <th scope=\"col\">Nama</th>\n");
-      out.write("      <th scope=\"col\">Prodi</th>\n");
-      out.write("      <th scope=\"col\">JK</th>\n");
-      out.write("      <th scope=\"col\">Status Kedatangan</th>\n");
-      out.write("    </tr>\n");
-      out.write("  </thead>\n");
-      out.write("  <tbody>\n");
+      out.write("\r\n");
+      out.write("    <table class=\"table table-striped\">\r\n");
+      out.write("\r\n");
+      out.write("  <thead>\r\n");
+      out.write("    <tr>\r\n");
+      out.write("      <th scope=\"col\">No Pendaftaran</th>\r\n");
+      out.write("      <th scope=\"col\">Nama</th>\r\n");
+      out.write("      <th scope=\"col\">Prodi</th>\r\n");
+      out.write("      <th scope=\"col\">JK</th>\r\n");
+      out.write("      <th scope=\"col\">Status Kedatangan</th>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("  </thead>\r\n");
+      out.write("  <tbody>\r\n");
       out.write("      ");
 while(rs.next()){
           
-      out.write("\n");
-      out.write("          <tr>\n");
+      out.write("\r\n");
+      out.write("          <tr>\r\n");
       out.write("              <th scope=\"row\">");
       out.print(rs.getString("nim") );
-      out.write("</th>\n");
+      out.write("</th>\r\n");
       out.write("              <td>");
       out.print(rs.getString("nama") );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("              <td>");
       out.print(rs.getString("prodi") );
-      out.write("</td>\n");
+      out.write("</td>\r\n");
       out.write("              <td>");
       out.print(rs.getString("jeniskelamin") );
-      out.write("</td>\n");
-      out.write("              <td>\n");
+      out.write("</td>\r\n");
+      out.write("              <td>\r\n");
       out.write("                  ");
 if(rs.getBoolean("status_kedatangan")== false){
                     
-      out.write("\n");
+      out.write("\r\n");
       out.write("  <center><a href=\"proses_asrama.jsp?nim=");
       out.print( rs.getString("nim") );
       out.write("&jk=");
       out.print( rs.getString("jeniskelamin") );
-      out.write("\" class=\"btn btn-success\">Datang</a></center>\n");
+      out.write("\" class=\"btn btn-success\">Datang</a></center>\r\n");
       out.write("                  ");
 
                   } 
                     else {
                     
-      out.write("\n");
-      out.write("                     Sudah Datang\n");
+      out.write("\r\n");
+      out.write("                     Sudah Datang\r\n");
       out.write("                    ");
 
 
                    }
                   
                   
-      out.write(" \n");
-      out.write("              </td>\n");
-      out.write("          </tr>\n");
+      out.write(" \r\n");
+      out.write("              </td>\r\n");
+      out.write("          </tr>\r\n");
       out.write("      ");
 }
-      out.write("\n");
-      out.write("\n");
-      out.write("  </tbody>\n");
-      out.write("    </table>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("  </tbody>\r\n");
+      out.write("    </table>\r\n");
       out.write("    ");
 }
     catch(Exception e){
@@ -151,9 +151,9 @@ if(rs.getBoolean("status_kedatangan")== false){
     finally{
           System.out.println("error connection");  }
     
-      out.write("\n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

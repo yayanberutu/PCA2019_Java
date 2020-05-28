@@ -49,6 +49,8 @@
           <th scope="col">ID</th>
       <th scope="col">Nama</th>
       <th scope="col">Prodi</th>
+      <th scope="col">Kamar</th>
+      <th scope="col">Asrama</th>
     </tr>
   </thead>
   <tbody>

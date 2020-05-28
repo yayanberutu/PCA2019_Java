@@ -42,34 +42,34 @@ public final class Aspa_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        \n");
-      out.write("        <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" rel=\"stylesheet\">\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("        \n");
-      out.write("\n");
-      out.write("<body>\n");
-      out.write("    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n");
-      out.write("      <a class=\"navbar-brand\" href=\"#\">PCA20</a>\n");
-      out.write("      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n");
-      out.write("        <span class=\"navbar-toggler-icon\"></span>\n");
-      out.write("      </button>\n");
-      out.write("      <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\n");
-      out.write("        <div class=\"navbar-nav\">\n");
-      out.write("          <a class=\"nav-item nav-link\" href=\"Home.jsp\">Home <span class=\"sr-only\">(current)</span></a>\n");
-      out.write("          <a class=\"nav-item nav-link active\" href=\"Aspa.jsp\">Kamar Aspa</a>\n");
-      out.write("          <a class=\"nav-item nav-link\" href=\"Aspi.jsp\">Kamar Aspi</a>\n");
-      out.write("        </div>\n");
-      out.write("      </div>\n");
-      out.write("    </nav>\n");
-      out.write("        \n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        \r\n");
+      out.write("        <link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\" rel=\"stylesheet\">\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("    </head>\r\n");
+      out.write("        \r\n");
+      out.write("\r\n");
+      out.write("<body>\r\n");
+      out.write("    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\r\n");
+      out.write("      <a class=\"navbar-brand\" href=\"Home.jsp\">PCA20</a>\r\n");
+      out.write("      <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-labl=\"Toggle navigation\">\r\n");
+      out.write("        <span class=\"navbar-toggler-icon\"></span>\r\n");
+      out.write("      </button>\r\n");
+      out.write("      <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">\r\n");
+      out.write("        <div class=\"navbar-nav\">\r\n");
+      out.write("          <a class=\"nav-item nav-link\" href=\"Home.jsp\">Home <span class=\"sr-only\">(current)</span></a>\r\n");
+      out.write("          <a class=\"nav-item nav-link active\" href=\"Aspa.jsp\">Kamar Aspa</a>\r\n");
+      out.write("          <a class=\"nav-item nav-link\" href=\"Aspi.jsp\">Kamar Aspi</a>\r\n");
+      out.write("        </div>\r\n");
+      out.write("      </div>\r\n");
+      out.write("    </nav>\r\n");
+      out.write("        \r\n");
       out.write("    ");
 
         
@@ -80,84 +80,51 @@ public final class Aspa_jsp extends org.apache.jasper.runtime.HttpJspBase
         System.out.println("Driver loaded successfully");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
         Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery("SELECT nama AS 'kamar', lantai, anggota, (SELECT asrama.nama FROM asrama WHERE asrama.id = kamar.asrama_id) AS 'asrama' FROM kamar WHERE asrama_id=1 ORDER BY id");
+        ResultSet rs=st.executeQuery("SELECT kamar.id as 'id', nama AS 'kamar', lantai, anggota, (SELECT asrama.nama FROM asrama WHERE asrama.id = kamar.asrama_id) AS 'asrama' FROM kamar WHERE asrama_id=1 ORDER BY id");
     
-      out.write("\n");
-      out.write("    \n");
-      out.write("    <table class=\"table\">\n");
-      out.write("  <thead>\n");
-      out.write("    <tr>\n");
-      out.write("      <th scope=\"col\">Kamar</th>\n");
-      out.write("      <th scope=\"col\">lantai</th>\n");
-      out.write("      <th scope=\"col\">Anggota</th>\n");
-      out.write("      <th scope=\"col\">Asrama</th>\n");
-      out.write("    </tr>\n");
-      out.write("  </thead>\n");
-      out.write("  <tbody>\n");
-      out.write("    <tr>\n");
+      out.write("\r\n");
+      out.write("    \r\n");
+      out.write("    <table class=\"table\">\r\n");
+      out.write("  <thead>\r\n");
+      out.write("    <tr>\r\n");
+      out.write("      <th scope=\"col\">Kamar</th>\r\n");
+      out.write("      <th scope=\"col\">lantai</th>\r\n");
+      out.write("      <th scope=\"col\">Anggota</th>\r\n");
+      out.write("      <th scope=\"col\">Asrama</th>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("  </thead>\r\n");
+      out.write("  <tbody>\r\n");
+      out.write("      ");
+while(rs.next()){
+          
+      out.write("\r\n");
+      out.write("          <tr>\r\n");
       out.write("        <th scope=\"row\">");
       out.print(rs.getString("kamar"));
-      out.write("</th>\n");
+      out.write("</th>\r\n");
       out.write("      <td>");
       out.print(rs.getString("lantai"));
-      out.write("</td>\n");
-      out.write("      <td>");
+      out.write("</td>\r\n");
+      out.write("      <td><a href=\"DaftarNama.jsp?id=\"");
+      out.print(rs.getString("id"));
+      out.write('>');
       out.print(rs.getString("anggota"));
-      out.write("</td>\n");
+      out.write("</a></td>\r\n");
       out.write("      <td>");
       out.print(rs.getString("asrama"));
-      out.write("</td>\n");
-      out.write("    </tr>\n");
-      out.write("    <tr>\n");
-      out.write("      <th scope=\"row\">2</th>\n");
-      out.write("      <td>Jacob</td>\n");
-      out.write("      <td>Thornton</td>\n");
-      out.write("      <td>@fat</td>\n");
-      out.write("    </tr>\n");
-      out.write("    <tr>\n");
-      out.write("      <th scope=\"row\">3</th>\n");
-      out.write("      <td>Larry</td>\n");
-      out.write("      <td>the Bird</td>\n");
-      out.write("      <td>@twitter</td>\n");
-      out.write("    </tr>\n");
-      out.write("  </tbody>\n");
-      out.write("</table>\n");
-      out.write("    \n");
-      out.write("    \n");
-      out.write("    <table border=1 align=center style=\"text-align:center\">\n");
-      out.write("      <thead>\n");
-      out.write("          <tr>\n");
-      out.write("             <th>Kode Mata Kuliah</th>\n");
-      out.write("             <th>Nama Mata Kuliah</th>\n");
-      out.write("             <th>SKS</th>\n");
-      out.write("             <th>Semester</th>\n");
-      out.write("          </tr>\n");
-      out.write("      </thead>\n");
-      out.write("      <tbody>\n");
-      out.write("        ");
-while(rs.next())
-        {
-            
-      out.write("\n");
-      out.write("            <tr>\n");
-      out.write("                <td>");
-      out.print(rs.getString("ID_MATKUL") );
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(rs.getString("NAMA_MATKUL") );
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(rs.getString("SKS") );
-      out.write("</td>\n");
-      out.write("                <td>");
-      out.print(rs.getString("Semester") );
-      out.write("</td>\n");
-      out.write("            </tr>\n");
-      out.write("            ");
-}
-      out.write("\n");
-      out.write("           </tbody>\n");
-      out.write("        </table><br>\n");
+      out.write("</td>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("          ");
+     
+      }
+
+      out.write("\r\n");
+      out.write("    \r\n");
+      out.write("  </tbody>\r\n");
+      out.write("</table>\r\n");
+      out.write("    \r\n");
+      out.write("    \r\n");
+      out.write("  \r\n");
       out.write("    ");
 }
     catch(Exception e){
@@ -168,9 +135,9 @@ while(rs.next())
     finally{
           System.out.println("error connection");  }
     
-      out.write("\n");
-      out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

@@ -39,7 +39,7 @@
         System.out.println("Driver loaded successfully");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
         Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery("SELECT nama AS 'kamar', lantai, anggota, (SELECT asrama.nama FROM asrama WHERE asrama.id = kamar.asrama_id) AS 'asrama' FROM kamar WHERE asrama_id=1 ORDER BY id");
+        ResultSet rs=st.executeQuery("SELECT kamar.id as 'id', nama AS 'kamar', lantai, anggota, (SELECT asrama.nama FROM asrama WHERE asrama.id = kamar.asrama_id) AS 'asrama' FROM kamar WHERE asrama_id=1 ORDER BY id");
     %>
     
     <table class="table">
@@ -57,7 +57,7 @@
           <tr>
         <th scope="row"><%=rs.getString("kamar")%></th>
       <td><%=rs.getString("lantai")%></td>
-      <td><a href="DaftarNama.jsp"><%=rs.getString("anggota")%></a></td>
+      <td><a href="DaftarNama.jsp?id="<%=rs.getString("id")%>><%=rs.getString("anggota")%></a></td>
       <td><%=rs.getString("asrama")%></td>
     </tr>
           <%     
