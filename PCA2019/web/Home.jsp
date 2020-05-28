@@ -64,8 +64,9 @@
                   <%
                   } 
                     else {
-                    %>
-                     Sudah Datang
+                     
+                  %>
+                     <%= rs.getString("updated_at")%>
                     <%
 
                    }
