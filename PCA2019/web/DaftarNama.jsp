@@ -32,51 +32,55 @@
     </nav>
         
     <%
-        
-    try
-    {
-        String className ="com.mysql.jdbc.Driver";
-        Class.forName(className);
-        System.out.println("Driver loaded successfully");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
-        Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery("SELECT * FROM kamar");
-    %>
-    
+    String id_kamar = request.getParameter("id");
+    try{
+               String className ="com.mysql.jdbc.Driver";
+               Class.forName(className);
+               System.out.println("Driver loaded successfully");
+               Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
+               Statement st=con.createStatement();
+               String sql = "SELECT m.nama as 'nama', m.prodi as 'prodi', m.asalsekolah as 'asal', k.nama as 'kamar', a.nama as 'asrama' from mahasiswa m inner join kamar k on m.kamar_id = k.id inner join asrama a on k.asrama_id = a.id where k.id="+id_kamar;
+               ResultSet rs = st.executeQuery(sql);
+%>
     <table class="table">
   <thead>
-      <tr>
-          <th scope="col">ID</th>
+    <tr>
+      <th scope="col">Asrama</th>
       <th scope="col">Nama</th>
       <th scope="col">Prodi</th>
+      <th scope="col">Asal</th>
       <th scope="col">Kamar</th>
-      <th scope="col">Asrama</th>
+
     </tr>
   </thead>
   <tbody>
-      <%if(rs.next()){
-           ResultSet rs2=st.executeQuery("SELECT kamar.id as id,mahasiswa.nama as nama, mahasiswa.prodi as prodi FROM mahasiswa INNER JOIN kamar WHERE mahasiswa.kamar_id="+rs.getInt("id"));
-           while(rs2.next()){
+      <%while(rs.next()){
           %>
-        <tr>
-        <th scope="row"><%=rs2.getString("id")%></th>
-        <td><%=rs2.getString("nama")%></td>
-        <td><%=rs2.getString("prodi")%></td>
+          <tr>
+        <th scope="row"><%=rs.getString("asrama")%></th>
+      <td><%=rs.getString("nama")%></td>
+      <td><%=rs.getString("prodi")%></td>
+      <td><%=rs.getString("asal")%></td>
+      <td><%=rs.getString("kamar")%></td>
     </tr>
           <%     
       }
-}
 %>
     
   </tbody>
-</table> 
-    <%}
-    catch(Exception e){
-        out.print(e.getMessage());%><br><%
-    }
-    finally{
-          System.out.println("error connection");  }
-    %> 
+</table>
+    
+
+<%
+               
+          }
+          catch(Exception e){
+            out.print(e.getMessage());}
+          finally{
+            System.out.println("error connection");  }
+ %>
+  
+
 </body>
 
 </html>
