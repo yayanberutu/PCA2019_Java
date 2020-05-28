@@ -11,14 +11,21 @@
             
       String nim = request.getParameter("nim"); 
       String jk = request.getParameter("jk");
-      if(jk.equals("Laki-laki")){
+
+      
           try{
                String className ="com.mysql.jdbc.Driver";
                Class.forName(className);
                System.out.println("Driver loaded successfully");
                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
                Statement st=con.createStatement();
-               String sql = "SELECT id FROM kamar WHERE anggota !=maks AND asrama_id = 1 LIMIT 1";
+               String sql = "";
+               if(jk.equals("Laki-laki")){
+                   sql ="SELECT id FROM kamar WHERE anggota !=maks AND asrama_id = 1 LIMIT 1";
+                }
+               else {
+                   sql = "SELECT id FROM kamar WHERE anggota !=maks AND asrama_id != 1 LIMIT 1";
+               }
                ResultSet rs = st.executeQuery(sql);
                String kamar = "";
                while(rs.next()){
@@ -34,7 +41,8 @@
             out.print(e.getMessage());}
           finally{
             System.out.println("error connection");  }
-         }
+         
+      
 
       String site = new String("Home.jsp");
          response.setStatus(response.SC_MOVED_TEMPORARILY);
