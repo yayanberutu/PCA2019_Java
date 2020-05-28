@@ -35,7 +35,7 @@
         System.out.println("Driver loaded successfully");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
         Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery("select * from Mahasiswa;");
+        ResultSet rs=st.executeQuery("SELECT * FROM mahasiswa ORDER BY status_kedatangan DESC");
 
     %>
     <table class="table table-striped">
@@ -60,9 +60,17 @@
               <td>
                   <%if(rs.getBoolean("status_kedatangan")== false){
                     %>
-  <center><a href="/mahasiswa/datang/nim=<%= rs.getString("nim") %>&jk=<%= rs.getString("jeniskelamin") %>" class="btn btn-success">Datang</a></center>
+  <center><a href="proses_asrama.jsp?nim=<%= rs.getString("nim") %>&jk=<%= rs.getString("jeniskelamin") %>" class="btn btn-success">Datang</a></center>
                   <%
-                  }%> 
+                  } 
+                    else {
+                    %>
+                     Sudah Datang
+                    <%
+
+                   }
+                  
+                  %> 
               </td>
           </tr>
       <%}%>

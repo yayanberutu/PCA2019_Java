@@ -76,7 +76,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         System.out.println("Driver loaded successfully");
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pca2019", "root", "");
         Statement st=con.createStatement();
-        ResultSet rs=st.executeQuery("select * from Mahasiswa;");
+        ResultSet rs=st.executeQuery("SELECT * FROM mahasiswa ORDER BY status_kedatangan DESC");
 
     
       out.write("\n");
@@ -114,14 +114,24 @@ while(rs.next()){
 if(rs.getBoolean("status_kedatangan")== false){
                     
       out.write("\n");
-      out.write("  <center><a href=\"/mahasiswa/datang/nim=");
+      out.write("  <center><a href=\"proses_asrama.jsp?nim=");
       out.print( rs.getString("nim") );
       out.write("&jk=");
       out.print( rs.getString("jeniskelamin") );
       out.write("\" class=\"btn btn-success\">Datang</a></center>\n");
       out.write("                  ");
 
-                  }
+                  } 
+                    else {
+                    
+      out.write("\n");
+      out.write("                     Sudah Datang\n");
+      out.write("                    ");
+
+
+                   }
+                  
+                  
       out.write(" \n");
       out.write("              </td>\n");
       out.write("          </tr>\n");
