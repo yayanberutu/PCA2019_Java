@@ -57,7 +57,7 @@
           <tr>
         <th scope="row"><%=rs.getString("kamar")%></th>
       <td><%=rs.getString("lantai")%></td>
-      <td><%=rs.getString("anggota")%></td>
+      <td><a href="DaftarNama.jsp"><%=rs.getString("anggota")%></a></td>
       <td><%=rs.getString("asrama")%></td>
     </tr>
           <%     
